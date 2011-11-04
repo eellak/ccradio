@@ -1,6 +1,8 @@
 ccradio.db
 *.pyc
 __init__.py
+panel/*.pyc
+panel/__init__.py
 settings_local.py
 public/media/jquery-1.6.4.min.js
 public/media/admin

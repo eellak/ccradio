@@ -2,18 +2,55 @@
 <html>
 <head>
 <title>CreativeCommons Radio</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="icon" href="/media/favicon.png" type="image/x-icon" />
-<link rel="shortcut icon" href="/media/favicon.png" type="image/x-icon" />
-<link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>
-<!--<script type="text/javascript" src="/media/js/main.js"></script>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="/media/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/media/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/media/js/jquery-1.6.4.min.js"></script>
+    <!--<script type="text/javascript" src="/media/js/main.js"></script>-->
 </head>
 <body>
 
-<div class="main">
-    <img src="/media/images/ccradio.png" alt="ccradio" /><br /><br />
+<div class="header">
+    <img src="/media/images/header.png" alt="ccradio" /><br /><br />
+</div>
+
+<div class="cont">
+    <div class="maincont">
+        <div class="signup">
+            <img src="/media/images/coming.png" alt="coming soon..." />
+        </div>
+        
+        <div class="player">
+        <!--
+            <iframe style="border:1px solid red;position:relative" src="http://radio.creativecommons.gr/test/jplayer/" width="420" height="120" frameborder="0" scrolling="no">-->
+        
+            {% include "jplayer.html" %}
+            
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footerLicense">
+            <div class="box">
+            <p class="footleft">
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" target="_blank">
+            <img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License" style="border:none;" />
+            </a>
+            Το περιεχόμενο του παρόντος ιστοχώρου υπάγεται σε <br />Άδεια Χρήσης
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" class="subfoot" target="_blank">Creative Commons: Attribution</a>.
+            </p>
+            
+            <p class="footright">
+            Υλοποίηση &amp; συντήρηση από <a href="http://www.eellak.gr" target="_blank">ΕΕΛ/ΛΑΚ</a><br />
+            με χρήση των Ανοιχτών Λογισμικών <a href="http://www.djangoproject.com/" target="_blank">Django</a> και <a href="http://www.icecast.org/" target="_blank">Icecast</a>.
+            </p>
+            </div>
+       </div>
+    </div>
+
+
 </div>
 </body>
 </html> 

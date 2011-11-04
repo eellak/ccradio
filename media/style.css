@@ -1,0 +1,49 @@
+body {
+    margin-top: 0px;
+    padding: 0px;
+    background-color:#eee;
+    color:#000000;
+    font-family:'Ubuntu', 'Droid Sans', 'dejavu sans';
+    font-size:13px;
+}
+
+img {
+    border:none;
+}
+
+a {
+    color:#009900;
+    text-decoration:underline;
+}
+
+a:hover {
+    color:#000000;
+}
+
+.main {
+    width:310px;
+    padding:10px;
+    margin:auto;
+    margin-top:10px;
+    text-align:center;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 3px #292929;  
+    -moz-box-shadow: 1px 1px 3px #292929;  
+    box-shadow: 1px 1px 3px #292929;
+}
+
+
+input {
+    border-radius: 5px;
+    border:1px solid gray;
+}
+
+select {
+    border-radius: 5px;
+    background-color:white;
+}
+
+option {
+    background-color:white;
+}

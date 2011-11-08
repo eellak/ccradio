@@ -18,17 +18,31 @@
 
 <div class="cont">
     <div class="maincont">
-        <div class="signup">
-            <img src="/media/images/coming.png" alt="coming soon..." />
+        <div class="info">
+            Το <b>radio.creativecommons.gr</b> είναι ένα μια υπηρεσία που απευθύνεται κυρίως σε καταστήματα, καφετέριες, ξενοδοχεία και γενικώς επαγγελματίες που θέλουν να αναπαράγουν στους χώρους τους <b>μουσική που διανέμεται ελεύθερα</b> με άδειες Creative Commons και δεν καλύπτεται από φορείς συλλογικής διαχείρισης.<br /><br />
+            <a href="/about">Περισσότερα...</a>
         </div>
         
         <div class="player">
-        <!--
-            <iframe style="border:1px solid red;position:relative" src="http://radio.creativecommons.gr/test/jplayer/" width="420" height="120" frameborder="0" scrolling="no">-->
-        
             {% include "jplayer.html" %}
-            
         </div>
+    
+        <div class="signup">
+            <form action="/" method="post" id="login">
+                <ol>
+                <li>
+                    <label for=username>username</label>
+                    <input type="text" name="username" id="username" placeholder="πληκτρολόγησε το username του" required title="πληκτρολόγησε το username του" />
+                </li>
+                <li>
+                    <label for=password>password</label>
+                    <input type="password" name="username" id="username" placeholder="πληκτρολόγησε τον κωδικό σου" required title="πληκτρολόγησε τον κωδικό του" />
+                </li>
+                </ol>
+                <button type="submit">login</button>
+            </form>
+        </div>
+
     </div>
 
     <div class="footer">

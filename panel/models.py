@@ -14,7 +14,7 @@ class Category(models.Model):
 	    ordering = ["name"]
 
 
-class BroadcastUser(models.Model):
+class Broadcaster(models.Model):
     GENRES = (
         ('1', 'Jazz'),
     	('2', 'Rock'),
@@ -30,7 +30,7 @@ class BroadcastUser(models.Model):
     url = models.URLField(max_length=150, blank=True)
     email = models.CharField(max_length=150, blank=True)
     about = models.TextField()
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(Category)
     user = models.ForeignKey(User, unique=True)
     title = models.CharField(max_length=120)
     active = models.BooleanField(default=True)
@@ -40,4 +40,4 @@ class BroadcastUser(models.Model):
 	    return self.name
 
     class Meta:
-	    ordering = ["title", "category"]
+	    ordering = ["title", "category__name"]

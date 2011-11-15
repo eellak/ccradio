@@ -2,6 +2,7 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 
 from ccradio import views
+from panel import views  as pviews
 
 #static
 from django.views.static import serve
@@ -13,6 +14,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', views.base),
+    url(r'^panel/', pviews.base),
 
     #admin
     url(r'^admin/', include(admin.site.urls)),

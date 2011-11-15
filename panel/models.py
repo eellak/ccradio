@@ -29,16 +29,15 @@ class Broadcaster(models.Model):
 	    ('10', 'Everything'),
     )
     url = models.URLField(max_length=150, blank=True)
-    email = models.CharField(max_length=150)
     about = models.TextField()
     category = models.ForeignKey(Category)
-    user = models.ForeignKey(User, unique=True)
     title = models.CharField(max_length=120)
     active = models.BooleanField(default=True)
     stream = models.CharField(max_length="1", choices=GENRES)
+    user = models.ForeignKey(User, unique=True)
     
     def __unicode__(self):
-	    return self.name
+	    return self.title
 
     class Meta:
 	    ordering = ["title", "category__name"]

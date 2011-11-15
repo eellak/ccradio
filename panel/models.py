@@ -12,6 +12,7 @@ class Category(models.Model):
 
     class Meta:
 	    ordering = ["name"]
+	    verbose_name_plural = "Categories"
 
 
 class Broadcaster(models.Model):
@@ -21,14 +22,14 @@ class Broadcaster(models.Model):
     	('3', 'Electronic'),
 	    ('4', 'Pop'),
     	('5', 'Alternative'),
-	    ('6', 'Jazz+Rock'),
-	    ('7', 'Jazz+Electronic'),
-	    ('8', 'Rock+Alternative'),
-	    ('9', 'Pop+Electronic'),
+	    ('6', 'Jazz + Rock'),
+	    ('7', 'Jazz + Electronic'),
+	    ('8', 'Rock + Alternative'),
+	    ('9', 'Pop + Electronic'),
 	    ('10', 'Everything'),
     )
     url = models.URLField(max_length=150, blank=True)
-    email = models.CharField(max_length=150, blank=True)
+    email = models.CharField(max_length=150)
     about = models.TextField()
     category = models.ForeignKey(Category)
     user = models.ForeignKey(User, unique=True)

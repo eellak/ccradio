@@ -9,13 +9,17 @@ from ccradio.panel.models import Broadcaster
 def get_play(stream):
     import urllib2
     from BeautifulSoup import BeautifulSoup
-    html = urllib2.urlopen("http://radio.creativecommons.gr:8000/status.xsl").read()
+    try:
+        html = urllib2.urlopen("http://stream.creativecommons.gr:8000/status.xsl").read()
+    except:
+        play = "radio.creativecommons.gr"
     soup = BeautifulSoup(html)
     #livetags = soup.findAll('h3')
     
     tdtags = soup.findAll('td', { "class" : "streamdata" })
+    tag = (int(stream) * 11) - 1
     try:
-        play = tdtags[int(stream)-1].contents[0]
+        play = tdtags[tag].contents[0]
     except:
         play = "radio.creativecommons.gr"
     return play

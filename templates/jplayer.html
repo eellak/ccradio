@@ -50,7 +50,7 @@
     	    </div>
     	    <div id="jp_playlist_1" class="jp-playlist">
 		<ul>
-	    	    <li><span id="live_play">{% block play %}{{ play|safe }}{% endblock play %}</span></li>
+	    	    <li><span id="live_play">{% block play %}{{ play|truncatewords_html:8|safe }}{% endblock play %}</span></li>
 		</ul>
     	    </div>
 

@@ -70,6 +70,10 @@ a:hover {
     font-size:0.9em;
 }
 
+#live_play {
+    font-size:0.8em;
+}
+
 form#login {
     background-color:#eee;
     /*

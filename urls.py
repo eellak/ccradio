@@ -14,6 +14,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', views.base),
+    url(r'^play/', views.play),
     url(r'^panel/', pviews.base),
 
     #admin

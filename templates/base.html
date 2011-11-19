@@ -18,10 +18,11 @@
 
 <div class="cont">
     <div class="maincont">
-    {% block maincont %}
         <div class="info">
+        {% block info %}
             Το <b>radio.creativecommons.gr</b> είναι ένα μια υπηρεσία που απευθύνεται κυρίως σε καταστήματα, καφετέριες, ξενοδοχεία και γενικώς επαγγελματίες που θέλουν να αναπαράγουν στους χώρους τους <b>μουσική που διανέμεται ελεύθερα</b> με άδειες Creative Commons και δεν καλύπτεται από φορείς συλλογικής διαχείρισης.<br /><br />
             <a href="/about">Περισσότερα...</a>
+        {% endblock info %}
         </div>
         
         <div class="player">
@@ -44,7 +45,6 @@
             </form>
         </div>
 
-    {% endblock maincont %}
     </div>
 
     <div class="footer">

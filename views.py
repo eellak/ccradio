@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.conf.urls.defaults import *
 from datetime import date
 from ccradio.panel.models import Broadcaster
+from django.contrib.auth import authenticate, login
 
 
 def get_play(stream):
@@ -13,6 +14,7 @@ def get_play(stream):
         html = urllib2.urlopen("http://stream.creativecommons.gr:8000/status.xsl").read()
     except:
         play = "radio.creativecommons.gr"
+        return play
     soup = BeautifulSoup(html)
     #livetags = soup.findAll('h3')
     
@@ -23,13 +25,24 @@ def get_play(stream):
     except:
         play = "radio.creativecommons.gr"
     return play
-        
+
 
 def base(request):
     if request.user.is_authenticated():
         return redirect('/panel/')
-    else:
-        play = get_play('10')
+    play = get_play('10')
+    if request.POST:
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('/panel/')
+            else:
+                authstate = "Ο λογαριασμός σας έχει απενεργοποιηθεί!"
+        else:
+            authstate = "Τα στοιχεία που εισάγατε δεν είναι σωστά!"
     return render_to_response('base.html', locals())
 
 

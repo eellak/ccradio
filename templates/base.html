@@ -29,6 +29,7 @@
             {% include "jplayer.html" %}
         </div>
     
+        {% block login %}
         <div class="signup">
             <form action="/" method="post" id="login">
                 <ol>
@@ -38,12 +39,14 @@
                 </li>
                 <li>
                     <label for=password>password</label>
-                    <input type="password" name="username" id="username" placeholder="πληκτρολόγησε τον κωδικό σου" required title="πληκτρολόγησε τον κωδικό του" />
+                    <input type="password" name="password" id="username" placeholder="πληκτρολόγησε τον κωδικό σου" required title="πληκτρολόγησε τον κωδικό του" />
                 </li>
                 </ol>
                 <button type="submit">login</button>
             </form>
+            <div class="error">{{ authstate }}</div>
         </div>
+        {% endblock login %}
 
     </div>
 

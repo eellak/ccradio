@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block info %}
+<div class="infouser">
+    <img src="/media/images/cat_{{ broadcaster.category.slug }}.svg" alt="cafe" /><br />
+    <b>{{ broadcaster.title }}</b><br />
+    Radio: {{ broadcaster.get_stream_display }}
 
- <img src="/media/images/cat_cafe.svg" alt="cafe" /> <b>{{ broadcaster.title }}</b>
-
+</div>
 {% endblock info %}
+
+{% block login %}
+{% endblock login %}

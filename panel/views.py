@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from datetime import date
 from ccradio.panel.models import Broadcaster, Category
 from ccradio.views import get_play
+from django.contrib.auth import logout
 
 
 def base(request):
@@ -15,3 +16,9 @@ def base(request):
         return render_to_response('panel.html', locals())
     else:
         return redirect('/')
+        
+
+def logout_user(request):
+    logout(request)
+    return redirect('/')
+    

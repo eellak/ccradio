@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     url(r'^$', views.base),
     url(r'^play/', views.play),
     url(r'^panel/', pviews.base),
-
+    url(r'^logout/', pviews.logout_user),
+    
     #admin
     url(r'^admin/', include(admin.site.urls)),
 )

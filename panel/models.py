@@ -15,25 +15,24 @@ class Category(models.Model):
 	    verbose_name_plural = "Categories"
 
 
+class Stream(models.Model):
+    name = models.CharField(max_length=50, verbose_name="κατηγορία")
+    uri = models.CharField(max_length=100)
+
+    def __unicode__(self):
+	    return self.name
+
+    class Meta:
+	    ordering = ["uri"]
+
+
 class Broadcaster(models.Model):
-    GENRES = (
-        ('1', 'Jazz'),
-    	('2', 'Rock'),
-    	('3', 'Electronic'),
-	    ('4', 'Pop'),
-    	('5', 'Alternative'),
-	    ('6', 'Jazz + Rock'),
-	    ('7', 'Jazz + Electronic'),
-	    ('8', 'Rock + Alternative'),
-	    ('9', 'Pop + Electronic'),
-	    ('10', 'Everything'),
-    )
     url = models.URLField(max_length=150, blank=True)
     about = models.TextField()
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=120)
     active = models.BooleanField(default=True)
-    stream = models.CharField(max_length="1", choices=GENRES)
+    stream = models.ForeignKey(Stream)
     user = models.ForeignKey(User, unique=True)
     
     def __unicode__(self):

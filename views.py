@@ -16,10 +16,10 @@ def get_play(stream):
         play = "radio.creativecommons.gr"
         return play
     soup = BeautifulSoup(html)
-    #livetags = soup.findAll('h3')
     
     tdtags = soup.findAll('td', { "class" : "streamdata" })
-    tag = (int(stream) * 11) - 1
+    live = stream[4:5]
+    tag = (int(live) * 11) - 1
     try:
         play = tdtags[tag].contents[0]
     except:
@@ -30,7 +30,7 @@ def get_play(stream):
 def base(request):
     if request.user.is_authenticated():
         return redirect('/panel/')
-    play = get_play('10')
+    play = get_play('live0')
     if request.POST:
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -52,7 +52,7 @@ def play(request):
             broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
             play = get_play(broadcaster.stream)
         else:
-            play = get_play('10')
+            play = get_play('0')
         return render_to_response('play.html', {'play': play})
     else:
         return redirect('/')

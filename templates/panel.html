@@ -4,7 +4,14 @@
 <div class="infouser">
     <img src="/media/images/cat_{{ broadcaster.category.slug }}.svg" alt="cafe" /><br />
     <b>{{ broadcaster.title }}</b><br />
-    Radio: {{ broadcaster.get_stream_display }}<br /><br />
+    <form action="/panel/" method="post" id="radio" name="radio" onChange="document.radio.submit()">
+        <label for=radio>Radio</label>
+        <select name="adio">
+            {% for stream in streams %}
+                <option value="stream.id" {% ifequal stream.id broadcaster.stream.id %}selected{% endifequal %}>{{ stream.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
     <a href="/logout/">Αποσύνδεση</a>
 
 </div>

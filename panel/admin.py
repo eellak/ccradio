@@ -1,4 +1,4 @@
-from ccradio.panel.models import Broadcaster, Category
+from ccradio.panel.models import Broadcaster, Category, Stream
 from django.contrib import admin
 from django.contrib.auth.models import User
 
@@ -16,4 +16,10 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ('name',)
 
 admin.site.register(Category, CategoryAdmin)
+
+class StreamAdmin(admin.ModelAdmin):
+    list_display = ('name', 'uri',)
+    ordering = ('uri',)
+
+admin.site.register(Stream, StreamAdmin)
 

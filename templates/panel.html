@@ -6,9 +6,9 @@
     <b>{{ broadcaster.title }}</b><br />
     <form action="/panel/" method="post" id="radio" name="radio" onChange="document.radio.submit()">
         <label for=radio>Radio</label>
-        <select name="adio">
+        <select name="stream">
             {% for stream in streams %}
-                <option value="stream.id" {% ifequal stream.id broadcaster.stream.id %}selected{% endifequal %}>{{ stream.name }}</option>
+                <option value="{{ stream.id }}" {% ifequal stream.id broadcaster.stream.id %}selected{% endifequal %}>{{ stream.name }}</option>
             {% endfor %}
         </select>
     </form>

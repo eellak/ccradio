@@ -11,6 +11,12 @@ from django.contrib.auth import logout
 
 def base(request):
     if request.user.is_authenticated():
+        if request.POST:
+            stream = request.POST.get('stream')
+            b = get_object_or_404(Broadcaster.objects.filter(user=request.user))
+            b.stream.id = stream
+            b.save()
+        
         broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
         streams = get_list_or_404(Stream.objects.all())
         play = get_play(broadcaster.stream.uri)

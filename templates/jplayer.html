@@ -9,8 +9,8 @@
 	$("#jpId").jPlayer( {
 	    ready: function () {
 		$(this).jPlayer("setMedia", {
-	    	    oga: "http://stream.creativecommons.gr:8000/live{{broadcaster.stream.uri}}",
-    		//}).jPlayer("play");
+	    	    oga: "http://stream.creativecommons.gr:8000/live{% if broadcaster.stream.uri %}{{broadcaster.stream.uri}}{% else %}0{% endif %}",
+    		}).jPlayer("play");
     		});
 	    },
 	    supplied: "oga",

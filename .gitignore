@@ -4,7 +4,7 @@ __init__.py
 panel/*.pyc
 panel/__init__.py
 settings_local.py
-public/media/jquery-1.6.4.min.js
-public/media/admin
+media/jquery-1.6.4.min.js
+media/admin
 apache
 data

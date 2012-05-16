@@ -8,7 +8,6 @@ from ccradio.panel.models import Broadcaster, Category, Stream, GenresLog
 from ccradio.views import get_play
 from django.contrib.auth import logout
 from django.db import IntegrityError
-from datetime import date
 from time import strftime
 
 

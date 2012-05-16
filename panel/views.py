@@ -4,10 +4,12 @@ from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.conf.urls.defaults import *
 from django.contrib.auth.models import User
 from datetime import date
-from ccradio.panel.models import Broadcaster, Category, Stream
+from ccradio.panel.models import Broadcaster, Category, Stream, GenresLog
 from ccradio.views import get_play
 from django.contrib.auth import logout
 from django.db import IntegrityError
+from datetime import date
+from time import strftime
 
 
 def base(request):
@@ -18,6 +20,11 @@ def base(request):
             b = Broadcaster.objects.get(user=request.user)
             b.stream = s
             b.save()
+            stime = strftime("%H:%M:%S")
+            GenresLog.date = stime
+            GenresLog.broadcaster = b
+            GenresLog.stream = s
+            GenresLog.save()
             
         broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
         streams = get_list_or_404(Stream.objects.all())

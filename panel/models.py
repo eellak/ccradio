@@ -39,4 +39,10 @@ class Broadcaster(models.Model):
 	    return self.title
 
     class Meta:
-	    ordering = ["title", "category__name"]
+        ordering = ["title", "category__name"]
+
+
+class GenresLog(models.Model):
+    date = models.DateField()
+    broadcaster = models.ForeignKey(Broadcaster)
+    stream = models.ForeignKey(Stream)

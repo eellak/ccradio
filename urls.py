@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^$', views.base),
     url(r'^play/', views.play),
     url(r'^panel/', pviews.base),
-    url(r'^register/', pviews.register),
+    url(r'^register/', views.register),
     url(r'^logout/', pviews.logout_user),
     
     #admin

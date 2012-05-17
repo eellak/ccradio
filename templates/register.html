@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
 {% block info %}
-blah blah
-    <table width="90%" align="left" id="comform">
-        <form action="." method="post">
-        {{ form.as_table }}
-        <!--
-        {{ html_captcha|safe }}
-        -->
-        <tr><td>&nbsp;</td><td align="left"><input style="min-height:29px;" type="submit" value="αποστολή" /><br /><br /></td></tr>
-        </form>
-    </table>
+<table width="90%" align="left" id="comform">
+    <form action="." method="post">
+    {{ form.as_table }}
+    <!--
+    {{ html_captcha|safe }}
+    -->
+    <tr><td>&nbsp;</td><td align="left"><input style="min-height:29px;" type="submit" value="αποστολή" /><br /><br /></td></tr>
+    </form>
+</table>
 {% endblock info %}
 
 {% block login %}

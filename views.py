@@ -50,7 +50,7 @@ def register(request):
     if request.user.is_authenticated():
         return redirect('/panel/')
     if request.POST:
-        form = Broadcaster(request.POST)
+        form = BroadcasterForm(request.POST)
         if form.is_valid():
             form.save()
     else:

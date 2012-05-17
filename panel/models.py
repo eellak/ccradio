@@ -28,10 +28,10 @@ class Stream(models.Model):
 
 
 class Broadcaster(models.Model):
-    url = models.URLField(max_length=150, blank=True)
-    about = models.TextField()
-    category = models.ForeignKey(Category)
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=120, verbose_name="Όνομα")
+    url = models.URLField(max_length=150, blank=True, verbose_name="Website")
+    category = models.ForeignKey(Category, verbose_name="Δραστηριότητα")
+    about = models.TextField(verbose_name="Περιγραφή")
     active = models.BooleanField(default=False)
     stream = models.ForeignKey(Stream)
     user = models.ForeignKey(User, unique=True)
@@ -53,4 +53,4 @@ class GenresLog(models.Model):
 class BroadcasterForm(ModelForm):
     class Meta:
         model = Broadcaster
-        exclude = ('active', 'stream')
+        exclude = ('active', 'stream', 'user')

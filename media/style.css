@@ -209,3 +209,18 @@ form#login button:hover {
     text-align:right;
 }
 
+input[type="text"] {
+	border: 1px solid #999;
+	padding: 6px 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+textarea {
+	border: 1px solid #999;
+	padding: 6px 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}

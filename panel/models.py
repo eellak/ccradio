@@ -33,8 +33,8 @@ class Broadcaster(models.Model):
     category = models.ForeignKey(Category, verbose_name="Δραστηριότητα")
     about = models.TextField(verbose_name="Περιγραφή")
     active = models.BooleanField(default=False)
-    stream = models.ForeignKey(Stream)
-    user = models.ForeignKey(User, unique=True)
+    stream = models.ForeignKey(Stream, default=1)
+    user = models.ForeignKey(User, unique=True, blank=True)
     
     def __unicode__(self):
 	    return self.title

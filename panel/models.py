@@ -32,7 +32,7 @@ class Broadcaster(models.Model):
     about = models.TextField()
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=120)
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=False)
     stream = models.ForeignKey(Stream)
     user = models.ForeignKey(User, unique=True)
     

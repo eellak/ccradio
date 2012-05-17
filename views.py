@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, get_object_or_404, get_list_or_
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.conf.urls.defaults import *
 from datetime import date
-from ccradio.panel.models import Broadcaster
+from ccradio.panel.models import Broadcaster, BroadcasterForm
 from django.contrib.auth import authenticate, login
 
 
@@ -44,6 +44,18 @@ def base(request):
         else:
             authstate = "Τα στοιχεία που εισάγατε δεν είναι σωστά!"
     return render_to_response('base.html', locals())
+
+
+def register(request):
+    if request.user.is_authenticated():
+        return redirect('/panel/')
+    if request.POST:
+        form = Broadcaster(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = BroadcasterForm()
+    return render_to_response('register.html', locals())
 
 
 def play(request):

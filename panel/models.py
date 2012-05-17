@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 
@@ -46,3 +47,10 @@ class GenresLog(models.Model):
     date = models.DateField()
     broadcaster = models.ForeignKey(Broadcaster)
     stream = models.ForeignKey(Stream)
+    ip = models.CharField(max_length=15)
+    
+
+class BroadcasterForm(ModelForm):
+    class Meta:
+        model = Broadcaster
+        exclude = ('active', 'stream')

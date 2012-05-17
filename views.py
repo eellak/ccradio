@@ -56,6 +56,10 @@ def register(request):
     else:
         form = BroadcasterForm()
     return render_to_response('register.html', locals())
+    
+    
+def tos(request):
+    return render_to_response('tos.html', locals())
 
 
 def play(request):

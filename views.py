@@ -5,15 +5,16 @@ from django.conf.urls.defaults import *
 from datetime import date
 from ccradio.panel.models import Broadcaster, BroadcasterForm
 from django.contrib.auth import authenticate, login
+from django.conf import settings
 
 
 def get_play(stream):
     import urllib2
     from BeautifulSoup import BeautifulSoup
     try:
-        html = urllib2.urlopen("http://stream.creativecommons.gr:8000/status.xsl").read()
+        html = urllib2.urlopen(settings.ICECAST_URL).read()
     except:
-        play = "radio.creativecommons.gr"
+        play = settings.RADIO_URL
         return play
     soup = BeautifulSoup(html)
     
@@ -23,7 +24,7 @@ def get_play(stream):
     try:
         play = tdtags[tag].contents[0]
     except:
-        play = "radio.creativecommons.gr"
+        play = settings.RADIO_URL
     return play
 
 

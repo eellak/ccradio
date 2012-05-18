@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block info %}
+<div class="tos" id="tos">
+    <iframe src="/tos/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
+    <div class="tosexit">
+        <a href="#" id="tosexit"><img src="/media/images/close.png" alt="close" /></a>
+    </div>
+</div>
+
 <table width="90%" align="left" id="comform">
     <form action="." method="post">
     {{ form.as_table }}
@@ -9,7 +16,7 @@
     -->
     <tr>
         <td align="right"><input type="checkbox" name="tos" value="1" /></td>
-        <td>Συμφωνώ με τους <a href="/tos/">όρους χρήσης</a></td>
+        <td>Συμφωνώ με τους <a href="#" id="tosopen">όρους χρήσης</a></td>
     </tr>
     <tr><td>&nbsp;</td><td align="left"><input style="min-height:29px;" type="submit" value="αποστολή" /><br /><br /></td></tr>
     </form>

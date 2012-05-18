@@ -224,3 +224,26 @@ textarea {
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
+
+.tos {
+    position:absolute;
+    width:700px;
+    height:500px;
+    top:50px;
+    left:50%;
+    margin-left:-350px;
+    z-index:5;
+    display:none;
+}
+
+.tostext {
+    text-align:left;
+    padding:5px;
+}
+
+.tosexit {
+    position:absolute;
+    top:-16px;
+    left:-16px;
+    z-index:60;
+}

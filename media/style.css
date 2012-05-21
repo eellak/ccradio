@@ -1,28 +1,27 @@
-* {
-    margin: 0;
-}
-
 html, body {
-	height: 100%;
+            height:100%;
 }
-
 body {
     margin: 0px;
     padding: 0px;
-    background-color:#f5f5f5;
-    background:url('/media/images/bg.png') repeat-x;
     color:#000000;
     font-family:'Ubuntu', 'Droid Sans', 'dejavu sans';
     font-size:12px;
 }
 
+.wrapper {
+    background:#f5f5f5 url('/media/images/bg.png') repeat-x;
+    height:100%;
+    min-height:100%;
+}
+
 a:hover {
-    color:#009BE3;
+    color:#00ccff;
 }
 
 a {
     text-decoration: none;
-    color: #009BE3;
+    color: #00ccff;
 }
 
 a img{
@@ -38,13 +37,17 @@ a:hover {
 .header {
     text-align:center;
     /*background:url('/media/images/strip.gif') repeat;*/
-    background:transparent;
-    width:100%;
-    height:150px;
+    background-color:#444;
+    width:960px;
+    height:100px;
+    margin:auto;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    margin-bottom:20px;
 }
 
 .maincont {
-    background:transparent;
+    background-color:transparent;
     width:977px;
     margin:auto;
     text-align:left;
@@ -71,7 +74,7 @@ a:hover {
     float:left;
     width:400px;
     padding:10px;
-    padding-left:40px;
+    padding-left:20px;
     font-size:0.9em;
 }
 
@@ -93,7 +96,7 @@ a:hover {
 
 form#radio select {
     background-color:transparent;
-    border:1px solid #009BE3;
+    border:1px solid #00ccff;
 }
 
 form#login {
@@ -103,7 +106,7 @@ form#login {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     */
-    border:1px solid #009BE3;
+    border:1px solid #00ccff;
     padding: 10px;
     width: 400px;
 }
@@ -178,9 +181,9 @@ form#login button:hover {
 
 .footer {
     clear:both; 
-    background-color: #eee;
+    background-color: #444;
     padding: 0 0 1.5em 0;
-    color: #555;
+    color: #fff;
     position:absolute;
     bottom:0px;
     width:100%;

@@ -16,60 +16,58 @@
     <img src="/media/images/header.png" alt="ccradio" /><br /><br />
 </div>
 
-<div class="cont">
-    <div class="maincont">
-        <div class="info">
-        {% block info %}
-            Το <b>radio.creativecommons.gr</b> είναι ένα μια υπηρεσία που απευθύνεται κυρίως σε καταστήματα, καφετέριες, ξενοδοχεία και γενικώς επαγγελματίες που θέλουν να αναπαράγουν στους χώρους τους <b>μουσική που διανέμεται ελεύθερα</b> με άδειες Creative Commons και δεν καλύπτεται από φορείς συλλογικής διαχείρισης.<br /><br />
-            <a href="/register">Κάνε εγγραφή...</a>
-        {% endblock info %}
-        </div>
+
+<div class="maincont">
+    <div class="info">
+    {% block info %}
+        Το <b>radio.creativecommons.gr</b> είναι ένα μια υπηρεσία που απευθύνεται κυρίως σε καταστήματα, καφετέριες, ξενοδοχεία και γενικώς επαγγελματίες που θέλουν να αναπαράγουν στους χώρους τους <b>μουσική που διανέμεται ελεύθερα</b> με άδειες Creative Commons και δεν καλύπτεται από φορείς συλλογικής διαχείρισης.<br /><br />
+        <a href="/register">Κάνε εγγραφή...</a>
+    {% endblock info %}
+    </div>
         
-        <div class="player">
-            {% include "jplayer.html" %}
-        </div>
+    <div class="player">
+        {% include "jplayer.html" %}
+    </div>
     
-        {% block login %}
-        <div class="signup">
-            <form action="/" method="post" id="login">
-                <ol>
-                <li>
-                    <label for=username>username</label>
-                    <input type="text" name="username" id="username" placeholder="πληκτρολόγησε το username του" required title="πληκτρολόγησε το username του" />
-                </li>
-                <li>
-                    <label for=password>password</label>
-                    <input type="password" name="password" id="username" placeholder="πληκτρολόγησε τον κωδικό σου" required title="πληκτρολόγησε τον κωδικό του" />
-                </li>
-                </ol>
-                <button type="submit">login</button>
-            </form>
-            <div class="error">{{ authstate }}</div>
-        </div>
-        {% endblock login %}
-
+    {% block login %}
+    <div class="signup">
+        <form action="/" method="post" id="login">
+            <ol>
+            <li>
+                <label for=username>username</label>
+                <input type="text" name="username" id="username" placeholder="πληκτρολόγησε το username του" required title="πληκτρολόγησε το username του" />
+            </li>
+            <li>
+                <label for=password>password</label>
+                <input type="password" name="password" id="username" placeholder="πληκτρολόγησε τον κωδικό σου" required title="πληκτρολόγησε τον κωδικό του" />
+            </li>
+            </ol>
+            <button type="submit">login</button>
+        </form>
+        <div class="error">{{ authstate }}</div>
     </div>
+    {% endblock login %}
 
-    <div class="footer">
-        <div class="footerLicense">
-            <div class="box">
-            <p class="footleft">
-            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" target="_blank">
-            <img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License" style="border:none;" />
-            </a>
-            Το περιεχόμενο του παρόντος ιστοχώρου υπάγεται σε <br />Άδεια Χρήσης
-            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" class="subfoot" target="_blank">Creative Commons: Attribution</a>.
-            </p>
+</div>
+
+
+<div class="footer">
+    <div class="footerLicense">
+        <div class="box">
+        <p class="footleft">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" target="_blank">
+        <img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License" style="border:none;" />
+        </a>
+        Το περιεχόμενο του παρόντος ιστοχώρου υπάγεται σε <br />Άδεια Χρήσης
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" class="subfoot" target="_blank">Creative Commons: Attribution</a>.
+        </p>
             
-            <p class="footright">
-            Υλοποίηση &amp; συντήρηση από <a href="http://www.eellak.gr" target="_blank">ΕΕΛ/ΛΑΚ</a><br />
-            με χρήση των Ανοιχτών Λογισμικών <a href="http://www.djangoproject.com/" target="_blank">Django</a> και <a href="http://www.icecast.org/" target="_blank">Icecast</a>.
-            </p>
-            </div>
-       </div>
-    </div>
-
-
+        <p class="footright">
+        Υλοποίηση &amp; συντήρηση από <a href="http://www.eellak.gr" target="_blank">ΕΕΛ/ΛΑΚ</a><br />
+        με χρήση των Ανοιχτών Λογισμικών <a href="http://www.djangoproject.com/" target="_blank">Django</a> και <a href="http://www.icecast.org/" target="_blank">Icecast</a>.
+        </p>
+        </div>
+   </div>
 </div>
 
 </body>

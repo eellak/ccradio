@@ -30,11 +30,12 @@ class Stream(models.Model):
 class Broadcaster(models.Model):
     title = models.CharField(max_length=120, verbose_name="Όνομα")
     url = models.URLField(max_length=150, blank=True, verbose_name="Website")
+    email = models.EmailField(max_length=75)
     category = models.ForeignKey(Category, verbose_name="Δραστηριότητα")
-    about = models.TextField(verbose_name="Περιγραφή")
-    active = models.BooleanField(default=False)
+    about = models.TextField(verbose_name="Περιγραφή/Σχόλια")
+    active = models.BooleanField(default=True)
     stream = models.ForeignKey(Stream, default=1)
-    user = models.ForeignKey(User, unique=True, blank=True)
+    user = models.ForeignKey(User, unique=True,)
     
     def __unicode__(self):
 	    return self.title

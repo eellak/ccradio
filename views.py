@@ -6,6 +6,7 @@ from datetime import date
 from ccradio.panel.models import Broadcaster, BroadcasterForm
 from django.contrib.auth import authenticate, login
 from django.conf import settings
+from django.core.mail import send_mail
 
 
 def get_play(stream):
@@ -53,7 +54,10 @@ def register(request):
     if request.POST:
         form = BroadcasterForm(request.POST)
         if form.is_valid():
-            form.save()
+            f = form.save(commit=False)
+            send_mail('[ccradio] Registration', 'title: '+f.title+'\nurl: '+f.url+'\nabout: '+f.about+'\ncategory: '+str(f.category_id), f.email,
+    ['nikos@autoverse.net'], fail_silently=False)
+            return redirect('/thanks/')
     else:
         form = BroadcasterForm()
     return render_to_response('register.html', locals())
@@ -61,6 +65,12 @@ def register(request):
     
 def tos(request):
     return render_to_response('tos.html', locals())
+
+
+def thanks(request):
+    if request.user.is_authenticated():
+        return redirect('/panel/')
+    return render_to_response('thanks.html', locals())
 
 
 def play(request):

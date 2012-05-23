@@ -10,4 +10,13 @@ $(document).ready(function() {
     $('a#tosexit').click(function() {
         $('#tos').hide('slow');
     });
+    
+    $('a#aboutopen').click(function() {
+        $('#about').show('slow');
+    });
+
+    $('a#aboutexit').click(function() {
+        $('#about').hide('slow');
+    });
 });
+

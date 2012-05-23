@@ -232,7 +232,7 @@ textarea {
 	border-radius: 8px;
 }
 
-.tos {
+.box {
     position:absolute;
     width:700px;
     height:500px;
@@ -244,13 +244,14 @@ textarea {
     border:1px dashed gray;
 }
 
-.tostext {
+.boxtext {
     text-align:left;
     padding:10px;
     background-color:#eee;
+    font-size:1.2em;
 }
 
-.tosexit {
+.boxexit {
     position:absolute;
     top:-16px;
     left:-16px;

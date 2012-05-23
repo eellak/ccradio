@@ -46,6 +46,10 @@ def base(request):
         else:
             authstate = "Τα στοιχεία που εισάγατε δεν είναι σωστά!"
     return render_to_response('base.html', locals())
+    
+
+def about(request):
+    return render_to_response('about.html', locals())
 
 
 def register(request):

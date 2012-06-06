@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var refreshId = setInterval(function() {
         $('#live_play').load('/play/');
-    }, 100000);
+    }, 10000);
     
     $('a#tosopen').click(function() {
         $('#tos').show('slow');
@@ -19,4 +19,3 @@ $(document).ready(function() {
         $('#about').hide('slow');
     });
 });
-

@@ -21,7 +21,7 @@ def get_play(stream):
     
     tdtags = soup.findAll('td', { "class" : "streamdata" })
     live = stream[4:5]
-    tag = (int(live) * 11) - 1
+    tag = ((int(live) + 1) * 11) - 1
     try:
         play = tdtags[tag].contents[0]
     except:
@@ -83,7 +83,7 @@ def play(request):
             broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
             play = get_play(broadcaster.stream)
         else:
-            play = get_play('0')
+            play = get_play('live0')
         return render_to_response('play.html', {'play': play})
     else:
         return redirect('/')

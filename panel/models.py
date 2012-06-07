@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 
@@ -30,10 +29,7 @@ class Stream(models.Model):
 class Broadcaster(models.Model):
     title = models.CharField(max_length=120, verbose_name="Όνομα")
     url = models.URLField(max_length=150, blank=True, verbose_name="Website")
-    email = models.EmailField(max_length=75)
-    category = models.ForeignKey(Category, verbose_name="Δραστηριότητα")
-    about = models.TextField(verbose_name="Περιγραφή/Σχόλια")
-    active = models.BooleanField(default=True)
+    category = models.ForeignKey(Category,  default=1, verbose_name="Δραστηριότητα")
     stream = models.ForeignKey(Stream, default=1)
     user = models.ForeignKey(User, unique=True,)
     
@@ -49,9 +45,3 @@ class GenresLog(models.Model):
     broadcaster = models.ForeignKey(Broadcaster)
     stream = models.ForeignKey(Stream)
     ip = models.CharField(max_length=15)
-    
-
-class BroadcasterForm(ModelForm):
-    class Meta:
-        model = Broadcaster
-        exclude = ('active', 'stream', 'user')

@@ -6,7 +6,7 @@ body {
     padding: 0px;
     color:#000000;
     font-family:'Ubuntu', 'Droid Sans', 'dejavu sans';
-	font-size: 100%;
+	font-size: 12px;
 }
 
 .wrapper {
@@ -82,8 +82,8 @@ a:hover {
     font-size:0.8em;
 }
 
-.error {
-    color:#FF5001;
+.error, .errors {
+    color:#FF0000;
     display:block-inline;
     width:420px;
     text-align:center;

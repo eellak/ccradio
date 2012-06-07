@@ -13,12 +13,12 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    (r'^$', 'views.base'),
-    (r'^play/', 'views.play'),
-    (r'^about/', 'views.about'),
+    (r'^$', 'ccradio.views.base'),
+    (r'^play/', 'ccradio.views.play'),
+    (r'^about/', 'ccradio.views.about'),
     (r'^panel/', 'ccradio.panel.views.base'),
-    (r'^thanks/', 'views.thanks'),
-    (r'^tos/', 'views.tos'),
+    (r'^thanks/', 'ccradio.views.thanks'),
+    (r'^tos/', 'ccradio.views.tos'),
     (r'^logout/', 'ccradio.panel.views.logout_user'),
     
     #admin

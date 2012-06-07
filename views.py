@@ -50,21 +50,6 @@ def base(request):
 
 def about(request):
     return render_to_response('about.html', locals())
-
-
-def register(request):
-    if request.user.is_authenticated():
-        return redirect('/panel/')
-    if request.POST:
-        form = BroadcasterForm(request.POST)
-        if form.is_valid():
-            f = form.save(commit=False)
-            send_mail('[ccradio] Registration', 'title: '+f.title+'\nurl: '+f.url+'\nabout: '+f.about+'\ncategory: '+str(f.category_id), f.email,
-    ['nikos@autoverse.net'], fail_silently=False)
-            return redirect('/thanks/')
-    else:
-        form = BroadcasterForm()
-    return render_to_response('register.html', locals())
     
     
 def tos(request):
@@ -87,22 +72,3 @@ def play(request):
         return render_to_response('play.html', {'play': play})
     else:
         return redirect('/')
-        
-        
-from django.contrib.auth.forms import UserCreationForm
-from django import forms
-def register2(request):
-    form = UserCreationForm()
-
-    if request.method == 'POST':
-        data = request.POST.copy()
-        errors = form.get_validation_errors(data)
-        if not errors:
-            new_user = form.save()
-            return HttpResponseRedirect("/accounts/created/")
-    else:
-        data, errors = {}, {}
-
-    return render_to_response("registration/register.html", {
-        'form' : forms.FormWrapper(form, data, errors)
-    })

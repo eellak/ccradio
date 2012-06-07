@@ -3,8 +3,8 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 
 class BroadcasterAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'active', 'stream')
-    list_filter = ('category', 'stream', 'active')
+    list_display = ('title', 'category', 'stream', 'url')
+    list_filter = ('category', 'stream')
     ordering = ('title', 'category')
     search_fields = ('title',)
 

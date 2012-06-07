@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block info %}
+  <h1>Ο λογαριασμός ενεργοποιήθηκε.</h1>
+  {% load humanize %}
+  {% if account %}
+    <p>Ευχαριστούμε για την εγγραφή! Τώρα μπορείτε να συνδεθείτε απ' την <a href="/">κεντρική σελίδα</a>.</p>
+  {% else %}
+    <p>Κάποιο λάθος συνέβη. Είτε ο σύνδεσμος ενεργοποίησης ήταν λανθασμένος είτε έχει λήξει.</p>
+  {% endif %}
+{% endblock %}
+
+{% block player %}
+{% endblock player %}
+
+{% block login %}
+{% endblock login %}

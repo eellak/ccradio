@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, get_object_or_404, get_list_or_
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.conf.urls.defaults import *
 from datetime import date
-from ccradio.panel.models import Broadcaster, BroadcasterForm
+from ccradio.panel.models import Broadcaster
 from django.contrib.auth import authenticate, login
 from django.conf import settings
 from django.core.mail import send_mail

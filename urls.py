@@ -2,28 +2,28 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 
 from ccradio import views
-from panel import views  as pviews
 
 #static
 from django.views.static import serve
 
 #admin
 from django.contrib import admin
+import registration
 admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    url(r'^$', views.base),
-    url(r'^play/', views.play),
-    url(r'^about/', views.about),
-    url(r'^panel/', pviews.base),
-    url(r'^register/', views.register),
-    url(r'^thanks/', views.thanks),
-    url(r'^tos/', views.tos),
-    url(r'^logout/', pviews.logout_user),
+    (r'^$', 'views.base'),
+    (r'^play/', 'views.play'),
+    (r'^about/', 'views.about'),
+    (r'^panel/', 'ccradio.panel.views.base'),
+    (r'^thanks/', 'views.thanks'),
+    (r'^tos/', 'views.tos'),
+    (r'^logout/', 'ccradio.panel.views.logout_user'),
     
     #admin
-    url(r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/', include('registration.urls')),
 )
 
 if settings.SERVE_MEDIA:

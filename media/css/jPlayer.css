@@ -271,6 +271,14 @@ input[type="text"] {
 	border-radius: 8px;
 }
 
+input[type="password"] {
+	border: 1px solid #999;
+	padding: 6px 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
 /* placeholder: Used in Community email input. The HTML controls the color using onfocus/onblur code. Inital condition uses this value, so the code and this css need to match colors. */
 input.placeholder {
 	color:#999;

@@ -11,6 +11,12 @@ from django.db import IntegrityError
 from time import strftime
 
 
+def createprofile(user):
+    b = Broadcaster(title=user.username, user=user)
+    b.save()
+    return b
+
+
 def base(request):
     if request.user.is_authenticated():
         if request.POST:
@@ -26,9 +32,11 @@ def base(request):
             GenresLog.stream = s
             GenresLog.save()
             """
-            
-        broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
-        ip = request.META.get('HTTP_X_FORWARDED_FOR', '')
+        try:
+            broadcaster = Broadcaster.objects.get(user=request.user)
+        except:
+            broadcaster = createprofile(request.user)
+        #ip = request.META.get('HTTP_X_FORWARDED_FOR', '')
         streams = get_list_or_404(Stream.objects.all())
         play = get_play(broadcaster.stream.uri)
         return render_to_response('panel.html', locals())

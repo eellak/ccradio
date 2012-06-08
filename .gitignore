@@ -8,3 +8,4 @@ media/jquery-1.6.4.min.js
 media/admin
 apache
 data
+templates/piwik.html

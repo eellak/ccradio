@@ -267,6 +267,6 @@ textarea {
 .boxexit {
     position:absolute;
     top:-16px;
-    left:-16px;
+    right:-10px;
     z-index:60;
 }

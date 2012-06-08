@@ -21,6 +21,7 @@ def get_play(stream):
     
     tdtags = soup.findAll('td', { "class" : "streamdata" })
     live = stream[4:5]
+    print live
     tag = ((int(live) + 1) * 11) - 1
     try:
         play = tdtags[tag].contents[0]
@@ -68,7 +69,7 @@ def play(request):
     if request.is_ajax():
         if request.user.is_authenticated():
             broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
-            play = get_play(broadcaster.stream)
+            play = get_play(broadcaster.uri)
         else:
             play = get_play('live0')
         return render_to_response('play.html', {'play': play})

@@ -20,7 +20,7 @@ def get_play(stream):
     soup = BeautifulSoup(html)
     
     tdtags = soup.findAll('td', { "class" : "streamdata" })
-    live = stream.uri[4:5]
+    live = stream[4:5]
     tag = ((int(live) + 1) * 11) - 1
     try:
         play = tdtags[tag].contents[0]

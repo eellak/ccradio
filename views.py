@@ -69,7 +69,7 @@ def play(request):
     if request.is_ajax():
         if request.user.is_authenticated():
             broadcaster = get_object_or_404(Broadcaster.objects.filter(user=request.user))
-            play = get_play(broadcaster.uri)
+            play = get_play(broadcaster.stream.uri)
         else:
             play = get_play('live0')
         return render_to_response('play.html', {'play': play})

@@ -11,35 +11,36 @@
   <form method="post" action="" class="wide">
     <p>
       <label for="id_username">username:</label>
-      {% if form.username.errors %}
-        <p class="errors">{{ form.username.errors.as_text }}</p>
-      {% endif %}
       {{ form.username }}
+      {% if form.username.errors %}
+        <div class="errors">{{ form.username.errors.as_text }}</div>
+      {% endif %}
     </p>
     <p>
       <label for="id_email">e-mail:</label>
+      {{ form.email }}
       {% if form.email.errors %}
         <p class="errors">{{ form.email.errors.as_text }}</p>
       {% endif %}
-      {{ form.email }}
     </p>
     <p>
       <label for="id_password1">password:</label>
+      {{ form.password1 }}
       {% if form.password1.errors %}
         <p class="errors">{{ form.password1.errors.as_text }}</p>
       {% endif %}
-      {{ form.password1 }}
     </p>
     <p>
       <label for="id_password2">επανάληψη password:</label>
+      {{ form.password2 }}
       {% if form.password2.errors %}
         <p class="errors">{{ form.password2.errors.as_text }}</p>
       {% endif %}
-      {{ form.password2 }}
+
     </p>
     <p class="submit"><input type="submit" value="Εγγραφή"></p>
   </form>
-  
+
 {% endblock %}
 
 {% block player %}

@@ -24,6 +24,8 @@ def get_play(stream):
     tag = ((int(live) + 1) * 11) - 1
     try:
         play = tdtags[tag].contents[0]
+        play = play.replace ("_", " ")
+        play = play.replace ("-", " - ")
     except:
         play = settings.RADIO_URL
     return play

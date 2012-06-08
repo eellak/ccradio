@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block info %}
+<div class="box" id="tos">
+    <iframe src="/tos/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
+    <div class="boxexit">
+        <a href="#" id="tosexit"><img src="/media/images/close.png" alt="close" /></a>
+    </div>
+</div>
 
   {% if form.errors %}
   <p class="errors">Παρακαλώ διορθώστε τα παρακάτω λάθη: {{ form.non_field_errors }}</p>
@@ -37,6 +43,10 @@
         <p class="errors">{{ form.password2.errors.as_text }}</p>
       {% endif %}
 
+    </p>
+    <p>
+      <input type="checkbox" name="tos" value="1" required /></td>
+      <td>Συμφωνώ με τους <a href="#" id="tosopen">όρους χρήσης</a>
     </p>
     <p class="submit"><input type="submit" value="Εγγραφή"></p>
   </form>

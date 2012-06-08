@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block info %}
+
+  {% if form.errors %}
+  <p class="errors">Παρακαλώ διορθώστε τα παρακάτω λάθη: {{ form.non_field_errors }}</p>
+  {% endif %}
+
+  <div style="font-weight:bold;">Δημιουργία λογαριασμού</div><br />
+  
+  <form method="post" action="" class="wide">
+    <p>
+      <label for="id_username">username:</label>
+      {{ form.username }}
+      {% if form.username.errors %}
+        <div class="errors">{{ form.username.errors.as_text }}</div>
+      {% endif %}
+    </p>
+    <p>
+      <label for="id_email">e-mail:</label>
+      {{ form.email }}
+      {% if form.email.errors %}
+        <p class="errors">{{ form.email.errors.as_text }}</p>
+      {% endif %}
+    </p>
+    <p>
+      <label for="id_password1">password:</label>
+      {{ form.password1 }}
+      {% if form.password1.errors %}
+        <p class="errors">{{ form.password1.errors.as_text }}</p>
+      {% endif %}
+    </p>
+    <p>
+      <label for="id_password2">επανάληψη password:</label>
+      {{ form.password2 }}
+      {% if form.password2.errors %}
+        <p class="errors">{{ form.password2.errors.as_text }}</p>
+      {% endif %}
+
+    </p>
+    <p class="submit"><input type="submit" value="Εγγραφή"></p>
+  </form>
+
+{% endblock %}
+
+{% block player %}
+{% endblock player %}
+
+{% block login %}
+{% endblock login %}
+

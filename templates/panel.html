@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block info %}
+<div class="infouser">
+    <img src="/media/images/cat_{{ broadcaster.category.slug }}.svg" alt="{{ broadcaster.category.slug }}" /><br />
+    <b>{{ broadcaster.title }}</b><br />
+    <div class="useropts">[ <span style="color:gray;">επεξεργασία προφίλ</span> | <a href="/logout/">αποσύνδεση</a> ]</div><br />
+    <form action="/panel/" method="post" id="radio" name="radio" onChange="document.radio.submit()">
+        <label for=radio>Radio: </label>
+        <select name="stream">
+            {% for stream in streams %}
+                <option value="{{ stream.id }}" {% ifequal stream.id broadcaster.stream.id %}selected{% endifequal %}>{{ stream.name }}</option>
+            {% endfor %}
+        </select>
+    </form><br /><br />
+    <div class="logs">
+        αρχεία καταγραφής (προσεχώς)
+    </div>
+</div>
+{% endblock info %}
+
+{% block login %}
+{% endblock login %}

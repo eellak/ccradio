@@ -1,0 +1,8 @@
+{% load humanize %}
+Έχετε κάνει αίτηση για νέο λογαριασμό στο ccradio.ellak.gr
+
+Για να το ενεργοποιήσετε πατήστε το παρακάτω σύνδεσμο:
+
+http://ccradio.ellak.gr/accounts/activate/{{ activation_key }}/
+
+Αν δεν κάνετε εσείς το αίτημα, αγνοήστε το παρόν e-mail.

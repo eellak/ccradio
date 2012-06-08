@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block info %}
+<div class="box" id="tos">
+    <iframe src="/tos/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
+    <div class="boxexit">
+        <a href="#" id="tosexit"><img src="/media/images/close.png" alt="close" /></a>
+    </div>
+</div>
+
+<table width="90%" align="left" id="comform">
+    <form action="." method="post">
+    {{ form.as_table }}
+    <!--
+    {{ html_captcha|safe }}
+    -->
+    <tr>
+        <td align="right"><input type="checkbox" name="tos" value="1" required /></td>
+        <td>Συμφωνώ με τους <a href="#" id="tosopen">όρους χρήσης</a></td>
+    </tr>
+    <tr><td>&nbsp;</td><td align="left"><input style="min-height:29px;" type="submit" value="αποστολή" /><br /><br /></td></tr>
+    </form>
+</table>
+{% endblock info %}
+
+{% block player %}
+{% endblock player %}
+
+{% block login %}
+{% endblock login %}

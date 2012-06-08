@@ -8,14 +8,22 @@ from django.views.static import serve
 
 #admin
 from django.contrib import admin
+import registration
 admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    url(r'^$', views.base),
-
+    (r'^$', 'ccradio.views.base'),
+    (r'^play/', 'ccradio.views.play'),
+    (r'^about/', 'ccradio.views.about'),
+    (r'^panel/', 'ccradio.panel.views.base'),
+    (r'^thanks/', 'ccradio.views.thanks'),
+    (r'^tos/', 'ccradio.views.tos'),
+    (r'^logout/', 'ccradio.panel.views.logout_user'),
+    
     #admin
-    url(r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/', include('registration.urls')),
 )
 
 if settings.SERVE_MEDIA:

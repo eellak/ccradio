@@ -46,6 +46,13 @@ a:hover {
     margin-bottom:20px;
 }
 
+.feedback {
+    position:absolute;
+    top:-32px;
+    left:60%;
+    z-index:3;
+}
+
 .maincont {
     background-color:transparent;
     width:977px;

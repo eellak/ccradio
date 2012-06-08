@@ -82,16 +82,29 @@ a:hover {
     font-size:0.8em;
 }
 
-.error, .errors {
+.error {
     color:#FF0000;
     display:block-inline;
     width:420px;
     text-align:center;
 }
 
-.infouser img{
-    width:50px;
+.errors {
+    color:#FF0000;
+    display:inline;
+}
 
+.infouser img {
+    width:40px;
+}
+
+.useropts {
+    font-size:0.6em;
+}
+
+.logs {
+    color:gray;
+    font-size:0.8em;
 }
 
 form#radio select {

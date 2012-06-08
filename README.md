@@ -1,11 +1,11 @@
 ccradio
 =======
 
-This is the source code of [radio.creativecommons.gr][ccradio] developed over the [Django][django] framework.
+This is the source code of [ccradio.ellak.gr][ccradio] developed over the [Django][django] framework.
 
 
 [django]: http://www.djangoproject.com/
-[ccradio]: http://radio.creativecommons.gr/
+[ccradio]: http://ccradio.ellak.gr/
 
 
 license

@@ -6,8 +6,8 @@
     <link rel="icon" href="/media/favicon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="/media/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen" />
-    <link href="/media/css/jPlayer.css" rel="stylesheet" type="text/css" />
-    <link href="/media/css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+    <!--<link href="/media/css/jPlayer.css" rel="stylesheet" type="text/css" />
+    <link href="/media/css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />-->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="/media/js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="/media/js/main.js"></script>
@@ -35,7 +35,8 @@
             </div>
         </div>
     
-        Το <b>ccradio</b> είναι ένα μια υπηρεσία που απευθύνεται κυρίως σε καταστήματα, καφετέριες, ξενοδοχεία και γενικώς επαγγελματίες που θέλουν να αναπαράγουν στους χώρους τους <b>μουσική που διανέμεται ελεύθερα</b> με άδειες <a href="http://creativecommons.gr/" target="_blank">Creative Commons</a> και δεν καλύπτεται από φορείς συλλογικής διαχείρισης.<br /><br />
+        Το ψηφιακό μουσικό ραδιόφωνο <b>ccradio.ellak.gr</b> είναι μια υπηρεσία που απευθύνεται κυρίως σε όσους θέλουν να αναπαράγουν δημόσια στους χώρους τους μουσική που <b>διανέμεται ελεύθερα</b> με άδειες <a href="http://creativecommons.gr/" target="_blank">Creative Commons</a> και <b>δεν δημιουργεί απαιτήσεις από φορείς συλλογικής διαχείρισης.</b><br /><br />
+        
         <a href="#" id="aboutopen">Περισσότερα...</a><br /><br />
         <a href="/accounts/register/">Κάνε εγγραφή</a>
     {% endblock info %}
@@ -43,21 +44,14 @@
     
     {% block player %}
     <div class="player">
-        <div class="jp-audio">
-        	<div class="jp-type-single">
-        	    <div id="jp_interface_1" class="jp-interface">
-	        
-        	        <div style="padding-left:35px;padding-top:25px;">
-            	        <object type="application/x-shockwave-flash" data="/media/player.swf" id="player" height="33" width="330"><param name="movie" value="/media/player.swf"><param name="FlashVars" value="bg=0xf8f8f8&amp;leftbg=0xeeeeee&amp;lefticon=0x666666&amp;rightbg=0xcccccc&amp;rightbghover=0x999999&amp;righticon=0x666666&amp;righticonhover=0xffffff&amp;text=0x666666&amp;slider=0x666666&amp;track=0xFFFFFF&amp;initialvolume=50&amp;loop=no&amp;autostart=yes&amp;playerID=player&amp;titles=ccradio.ellak.gr{% if broadcaster.stream.name %}: {{ broadcaster.stream.name }}{% endif %}&amp;soundFile=http://stream.creativecommons.gr:8000/{% if broadcaster.stream.uri %}{{broadcaster.stream.uri}}{% else %}live0{% endif %}"><param name="quality" value="high"><param name="menu" value="false"><param name="wmode" value="transparent"></object>
-        	        </div>
-    
-        	    </div>
-        	    <div id="jp_playlist_1" class="jp-playlist">
-            		<ul>
-        	    	    <li><span id="live_play">{% block play %}{{ play|truncatewords_html:7|safe }}{% endblock play %}</span></li>
-            		</ul>
-        	    </div>
-        	</div>
+        <div class="player-audio">	        
+            <div style="padding:25px 35px;">
+  	        <object type="application/x-shockwave-flash" data="/media/player.swf" id="player" height="33" width="330"><param name="movie" value="/media/player.swf"><param name="FlashVars" value="bg=0xf8f8f8&amp;leftbg=0xeeeeee&amp;lefticon=0x666666&amp;rightbg=0xcccccc&amp;rightbghover=0x999999&amp;righticon=0x666666&amp;righticonhover=0xffffff&amp;text=0x666666&amp;slider=0x666666&amp;track=0xFFFFFF&amp;initialvolume=50&amp;loop=no&amp;autostart=yes&amp;playerID=player&amp;titles=ccradio.ellak.gr{% if broadcaster.stream.name %}: {{ broadcaster.stream.name }}{% endif %}&amp;soundFile=http://stream.creativecommons.gr:8000/{% if broadcaster.stream.uri %}{{broadcaster.stream.uri}}{% else %}live0{% endif %}"><param name="quality" value="high"><param name="menu" value="false"><param name="wmode" value="transparent"></object>
+  	        </div>
+        
+            <div class="playlist">
+                &#x266b;&nbsp; <span id="live_play">{% block play %}{{ play|truncatewords_html:7|safe }}{% endblock play %}</span>
+            </div>
         </div>
     </div>
     {% endblock player %}
@@ -65,16 +59,8 @@
     {% block login %}
     <div class="signup">
         <form action="/" method="post" id="login">
-            <ol>
-            <li>
-                <label for=username>username</label>
-                <input type="text" name="username" id="username" placeholder="πληκτρολόγησε το username του" required title="πληκτρολόγησε το username του" />
-            </li>
-            <li>
-                <label for=password>password</label>
-                <input type="password" name="password" id="username" placeholder="πληκτρολόγησε τον κωδικό σου" required title="πληκτρολόγησε τον κωδικό του" />
-            </li>
-            </ol>
+            <input type="text" name="username" id="username" placeholder="username" required title="πληκτρολόγησε το username σου" /><br /><br />
+            <input type="password" name="password" id="username" placeholder="password" required title="πληκτρολόγησε τον κωδικό σου" /><br /><br />
             <button type="submit">login</button>
         </form>
         <div class="error">{{ authstate }}</div>

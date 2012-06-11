@@ -22,6 +22,10 @@ urlpatterns = patterns('',
     (r'^logout/', 'ccradio.panel.views.logout_user'),
     
     #admin
+    (r'^admin/password_reset/$', 'django.contrib.auth.views.password_reset'),
+    (r'^admin/password_reset/done/$', 'django.contrib.auth.views.password_reset_done'),
+    (r'^admin/reset/(?P<uidb35>[0-9A-Za-z]+)-(?P<token>.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
+    (r'^admin/reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
     (r'^admin/', include(admin.site.urls)),
     (r'^accounts/', include('registration.urls')),
 )

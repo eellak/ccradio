@@ -17,12 +17,12 @@ body {
 }
 
 a:hover {
-    color:#00ccff;
+    color:#00aaee;
 }
 
 a {
     text-decoration: none;
-    color: #00ccff;
+    color: #00aaee;
 }
 
 a img{
@@ -67,6 +67,7 @@ a:hover {
     float:right;
     width:400px;
     margin-right:40px;
+    border:1px solid #00ccff;
 }
 
 
@@ -88,7 +89,7 @@ a:hover {
 
 .player-audio {
 	background-color:#eee;
-		width:100%;
+    width:100%;
 	border:1px solid #00CCFF;
 }
 
@@ -131,7 +132,6 @@ form#radio select {
 
 form#login {
     background-color:#eee;
-    border:1px solid #00ccff;
     width: 100%;
     text-align:center;
     padding-top:15px;
@@ -149,7 +149,7 @@ form#login input {
     width: 300px;
     margin-bottom:10px;
     margin: auto;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 
@@ -169,12 +169,21 @@ form#login button {
     margin: auto;
     padding: 7px 15px;
     text-shadow: 0 1px 1px #000000;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
 form#login button:hover {
     background: #fff;
     cursor: pointer;
+}
+
+.signup-details {
+    border-top:1px solid #ccc;
+    font-size:1.2em;
+    width: auto;
+    padding:5px 20px;
+    font-size:1.4em;
+    text-align:center;
 }
 
 .footer {

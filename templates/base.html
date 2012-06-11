@@ -36,7 +36,6 @@
         Το ψηφιακό μουσικό ραδιόφωνο <b>ccradio.ellak.gr</b> είναι μια υπηρεσία που απευθύνεται κυρίως σε όσους θέλουν να αναπαράγουν δημόσια στους χώρους τους μουσική που <b>διανέμεται ελεύθερα</b> με άδειες <a href="http://creativecommons.gr/" target="_blank">Creative Commons</a> και <b>δεν δημιουργεί απαιτήσεις από φορείς συλλογικής διαχείρισης.</b><br /><br />
         
         <a href="#" id="aboutopen">Περισσότερα...</a><br /><br />
-        <a href="/accounts/register/">Κάνε εγγραφή</a>
     {% endblock info %}
     </div>
     
@@ -61,6 +60,9 @@
             <input type="password" name="password" id="username" placeholder="password" required title="πληκτρολόγησε τον κωδικό σου" /><br /><br />
             <button type="submit">login</button>
         </form>
+        <div class="signup-details">
+            <a href="/accounts/register/">κάνε εγγραφή</a> &nbsp;|&nbsp; <a href="/admin/password_reset/">υπενθύμιση κωδικού</a>
+        </div>
         <div class="error">{{ authstate }}</div>
     </div>
     {% endblock login %}

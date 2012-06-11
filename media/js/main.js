@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('#feedback').animate({'top': '0px'}, 400);
     });
     
-    $('#info').mouseover(function() {
+    $('.header').mouseout(function() {
         $('#feedback').animate({'top': '-32px'}, 'slow');
     }); 
     

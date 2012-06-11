@@ -97,6 +97,10 @@ a:hover {
     font-size:1.2em;
 }
 
+.logs {
+    
+}
+
 .error {
     color:#FF0000;
     display:block-inline;
@@ -118,8 +122,12 @@ a:hover {
 }
 
 .logs {
+    float:right;
+    width:400px;
+    margin-right:40px;
+    padding-bottom:20px;
     color:gray;
-    font-size:0.8em;
+    font-size:1.2em;
 }
 
 form#radio select {

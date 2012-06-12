@@ -26,6 +26,14 @@
 <div class="maincont">
     <div class="info" id="info">
     {% block info %}
+    <div class="box" id="tos">
+    <iframe src="/tos/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
+    <div class="boxexit">
+        <a href="#" id="tosexit"><img src="/media/images/close.png" alt="close" /></a>
+    </div>
+    </div>
+    
+    
         <div class="box" id="about">
             <iframe src="/about/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
             <div class="boxexit">
@@ -72,22 +80,9 @@
 
 
 <div class="footer">
-    <div class="footerLicense">
-        <div>
-        <p class="footleft">
-        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" target="_blank">
-        <img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons License" style="border:none;" />
-        </a>
-        Το περιεχόμενο του παρόντος ιστοχώρου υπάγεται σε <br />Άδεια Χρήσης
-        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/gr/" class="subfoot" target="_blank">Creative Commons: Attribution</a>.
-        </p>
-            
-        <p class="footright">
-        Υλοποίηση &amp; συντήρηση από <a href="http://www.eellak.gr" target="_blank">ΕΕΛ/ΛΑΚ</a><br />
-        με χρήση των Ανοιχτών Λογισμικών <a href="http://www.djangoproject.com/" target="_blank">Django</a> και <a href="http://www.icecast.org/" target="_blank">Icecast</a>.
-        </p>
-        </div>
-   </div>
+    <div class="footertext">
+        <a href="#" id="tosopen">Όροι χρήσης</a> &nbsp;-&nbsp; Υλοποίηση &amp; συντήρηση από <a href="http://www.eellak.gr" target="_blank">ΕΕΛ/ΛΑΚ</a> με χρήση των Ανοιχτών Λογισμικών <a href="http://www.djangoproject.com/" target="_blank">Django</a> και <a href="http://www.icecast.org/" target="_blank">Icecast</a>
+    </div>
 </div>
 
 </div>

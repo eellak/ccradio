@@ -3,14 +3,6 @@ $(document).ready(function() {
         $('#live_play').load('/play/');
     }, 10000);
     
-    $('a#feedbackbtn').mouseover(function() {
-        $('#feedback').animate({'top': '0px'}, 400);
-    });
-    
-    $('.header').mouseout(function() {
-        $('#feedback').animate({'top': '-32px'}, 'slow');
-    }); 
-    
     $('a#tosopen').click(function() {
         $('#tos').show('slow');
     });

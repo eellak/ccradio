@@ -49,8 +49,8 @@ a:hover {
 
 .feedback {
     position:absolute;
-    top:-32px;
-    left:60%;
+    top:350px;
+    left:0px;
     z-index:3;
 }
 

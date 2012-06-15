@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from datetime import datetime
 from django.contrib.auth.models import User
 
 
@@ -41,7 +42,7 @@ class Broadcaster(models.Model):
 
 
 class GenresLog(models.Model):
-    date = models.DateField()
+    date = models.DateField(default=datetime.now)
     broadcaster = models.ForeignKey(Broadcaster)
     stream = models.ForeignKey(Stream)
     ip = models.CharField(max_length=15)

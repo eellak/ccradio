@@ -37,7 +37,12 @@ def base(request):
             broadcaster = Broadcaster.objects.get(user=request.user)
         except:
             broadcaster = createprofile(request.user)
-        ip = request.META.get('HTTP_X_FORWARDED_FOR', '')
+        ip = request.META.get("HTTP_X_FORWARDED_FOR", None)
+        if ip:
+            # X_FORWARDED_FOR returns client1, proxy1, proxy2,...
+            ip = ip.split(", ")[0]
+        else:
+            ip = request.META.get("REMOTE_ADDR", "")
         streams = get_list_or_404(Stream.objects.all())
         play = get_play(broadcaster.stream.uri)
         return render_to_response('panel.html', locals())

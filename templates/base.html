@@ -25,7 +25,6 @@
 
 <div class="maincont">
     <div class="info" id="info">
-    {% block info %}
     <div class="box" id="tos">
     <iframe src="/tos/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
     <div class="boxexit">
@@ -33,15 +32,16 @@
     </div>
     </div>
     
-    
-        <div class="box" id="about">
-            <iframe src="/about/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
-            <div class="boxexit">
-                <a href="#" id="aboutexit"><img src="/media/images/close.png" alt="close" /></a>
-            </div>
+    <div class="box" id="about">
+        <iframe src="/about/" width="700" height="500" frameborder="0" scrolling="auto"></iframe>
+        <div class="boxexit">
+            <a href="#" id="aboutexit"><img src="/media/images/close.png" alt="close" /></a>
         </div>
+    </div>
+        
+    {% block info %}
     
-        Το ψηφιακό μουσικό ραδιόφωνο <b>ccradio.ellak.gr</b> είναι μια υπηρεσία που απευθύνεται κυρίως σε όσους θέλουν να αναπαράγουν δημόσια στους χώρους τους μουσική που <b>διανέμεται ελεύθερα</b> με άδειες <a href="http://creativecommons.gr/" target="_blank">Creative Commons</a> και <b>δεν δημιουργεί απαιτήσεις από φορείς συλλογικής διαχείρισης.</b><br /><br />
+    Το ψηφιακό μουσικό ραδιόφωνο <b>ccradio.ellak.gr</b> είναι μια υπηρεσία που απευθύνεται κυρίως σε όσους θέλουν να αναπαράγουν δημόσια στους χώρους τους μουσική που <b>διανέμεται ελεύθερα</b> με άδειες <a href="http://creativecommons.gr/" target="_blank">Creative Commons</a> και <b>δεν δημιουργεί απαιτήσεις από φορείς συλλογικής διαχείρισης.</b><br /><br />
         
         <a href="#" id="aboutopen">Περισσότερα...</a><br /><br />
     {% endblock info %}

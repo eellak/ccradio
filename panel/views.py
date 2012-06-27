@@ -15,17 +15,29 @@ def createprofile(user):
     b = Broadcaster(title=user.username, user=user)
     b.save()
     return b
+    
+    
+def get_userip(request):
+    ip = request.META.get("HTTP_X_FORWARDED_FOR", None)
+    if ip:
+        ip = ip.split(", ")[0]
+    else:
+        ip = request.META.get("REMOTE_ADDR", "")
+    return ip
+
 
 
 def base(request):
     if request.user.is_authenticated():
+        userip = get_userip(request)
         if request.POST:
             stream = request.POST.get('stream')
             s = Stream.objects.get(id=stream)
             b = Broadcaster.objects.get(user=request.user)
             b.stream = s
             b.save()
-            #g = GenresLog(broadcaster=b, stream=s, ip=userip)
+            g = GenresLog(broadcaster=b, stream=s, ip=userip)
+            g.save()
             """
             stime = strftime("%H:%M:%S")
             GenresLog.date = stime
@@ -37,12 +49,6 @@ def base(request):
             broadcaster = Broadcaster.objects.get(user=request.user)
         except:
             broadcaster = createprofile(request.user)
-        ip = request.META.get("HTTP_X_FORWARDED_FOR", None)
-        if ip:
-            # X_FORWARDED_FOR returns client1, proxy1, proxy2,...
-            ip = ip.split(", ")[0]
-        else:
-            ip = request.META.get("REMOTE_ADDR", "")
         streams = get_list_or_404(Stream.objects.all())
         play = get_play(broadcaster.stream.uri)
         return render_to_response('panel.html', locals())

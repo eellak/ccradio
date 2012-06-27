@@ -46,3 +46,9 @@ class GenresLog(models.Model):
     broadcaster = models.ForeignKey(Broadcaster)
     stream = models.ForeignKey(Stream)
     ip = models.CharField(max_length=15)
+    
+    def __unicode__(self):
+	    return self.broadcaster
+
+    class Meta:
+        ordering = ["broadcaster", "date"]

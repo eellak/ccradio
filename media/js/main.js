@@ -19,3 +19,8 @@ $(document).ready(function() {
         $('#about').hide('slow');
     });
 });
+
+
+$(function() {
+    $("#datepicker").datepicker({ dateFormat: "dd/mm/yy" });
+});

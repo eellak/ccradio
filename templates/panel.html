@@ -2,6 +2,7 @@
 
 {% block info %}
 <div class="infouser">
+    <div class="toplabel">about.me</div>
     <img src="/media/images/cat_{{ broadcaster.category.slug }}.svg" alt="{{ broadcaster.category.slug }}" /><br />
     <b>{{ broadcaster.title }}</b><br />
     <div class="useropts">[ <span style="color:gray;">επεξεργασία προφίλ</span> | <a href="/logout/">αποσύνδεση</a> ]</div><br />
@@ -18,7 +19,11 @@
 
 {% block logs %}
     <div class="logs">
-        αρχεία καταγραφής (προσεχώς) {{ userip }}
+        <div class="toplabel">radio.logs</div>
+        <form action="/panel/logs" method="post" class="wide" id="logs">
+            <input type="text" id="datepicker" name="" placeholder="επιλογή ημερομηνίας"  /><br /><br />
+            <button type="submit">λήψη</button>
+        </form>
     </div>
 {% endblock logs %}
 

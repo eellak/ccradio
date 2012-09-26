@@ -14,6 +14,7 @@ from django.conf import settings
 ICECAST_URL = settings.ICECAST_URL
 RADIO_URL = settings.RADIO_URL
 LOGS_URL = settings.LOGS_URL
+STREAM_URL = settings.STREAM_URL
 
 
 def createprofile(user):

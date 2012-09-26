@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 ICECAST_URL = settings.ICECAST_URL
 RADIO_URL = settings.RADIO_URL
 LOGS_URL = settings.LOGS_URL
+STREAM_URL = settings.STREAM_URL
 
 
 def get_play(stream):

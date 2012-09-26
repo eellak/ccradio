@@ -8,14 +8,18 @@ from django.contrib.auth import authenticate, login
 from django.conf import settings
 from django.core.mail import send_mail
 
+ICECAST_URL = settings.ICECAST_URL
+RADIO_URL = settings.RADIO_URL
+LOGS_URL = settings.LOGS_URL
+
 
 def get_play(stream):
     import urllib2
     from BeautifulSoup import BeautifulSoup
     try:
-        html = urllib2.urlopen(settings.ICECAST_URL).read()
+        html = urllib2.urlopen(ICECAST_URL).read()
     except:
-        play = settings.RADIO_URL
+        play = RADIO_URL
         return play
     soup = BeautifulSoup(html)
     
@@ -28,7 +32,7 @@ def get_play(stream):
         play = play.replace ("_", " ")
         play = play.replace ("-", " - ")
     except:
-        play = settings.RADIO_URL
+        play = RADIO_URL
     return play
 
 

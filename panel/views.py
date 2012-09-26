@@ -11,11 +11,6 @@ from django.db import IntegrityError
 from time import strftime
 from django.conf import settings
 
-ICECAST_URL = settings.ICECAST_URL
-RADIO_URL = settings.RADIO_URL
-LOGS_URL = settings.LOGS_URL
-STREAM_URL = settings.STREAM_URL
-
 
 def createprofile(user):
     b = Broadcaster(title=user.username, user=user)
@@ -57,6 +52,7 @@ def base(request):
             broadcaster = createprofile(request.user)
         streams = get_list_or_404(Stream.objects.all())
         play = get_play(broadcaster.stream.uri)
+        STREAM_URL = settings.STREAM_URL
         return render_to_response('panel.html', locals())
     else:
         return redirect('/')

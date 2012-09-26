@@ -8,19 +8,14 @@ from django.contrib.auth import authenticate, login
 from django.conf import settings
 from django.core.mail import send_mail
 
-ICECAST_URL = settings.ICECAST_URL
-RADIO_URL = settings.RADIO_URL
-LOGS_URL = settings.LOGS_URL
-STREAM_URL = settings.STREAM_URL
-
 
 def get_play(stream):
     import urllib2
     from BeautifulSoup import BeautifulSoup
     try:
-        html = urllib2.urlopen(ICECAST_URL).read()
+        html = urllib2.urlopen(settings.ICECAST_URL).read()
     except:
-        play = RADIO_URL
+        play = settings.RADIO_URL
         return play
     soup = BeautifulSoup(html)
     
@@ -33,7 +28,7 @@ def get_play(stream):
         play = play.replace ("_", " ")
         play = play.replace ("-", " - ")
     except:
-        play = RADIO_URL
+        play = settings.RADIO_URL
     return play
 
 
@@ -53,6 +48,7 @@ def base(request):
                 authstate = "Ο λογαριασμός σας έχει απενεργοποιηθεί!"
         else:
             authstate = "Τα στοιχεία που εισάγατε δεν είναι σωστά!"
+    STREAM_URL = settings.STREAM_URL
     return render_to_response('base.html', locals())
     
 

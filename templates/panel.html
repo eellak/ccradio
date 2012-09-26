@@ -20,9 +20,9 @@
 {% block logs %}
     <div class="logs">
         <div class="toplabel">radio.logs</div>
-        <form action="/panel/logs/" method="post" class="wide" id="logs">
+        <form class="wide" id="logs">
             <input type="text" id="datepicker" name="" placeholder="επιλογή ημερομηνίας"  /><br /><br />
-            <button type="submit">λήψη</button>
+            <button type="submit" id="getlogs">λήψη</button>
         </form>
     </div>
 {% endblock logs %}

@@ -18,9 +18,12 @@ $(document).ready(function() {
     $('a#aboutexit').click(function() {
         $('#about').hide('slow');
     });
+    
+    $("#datepicker").datepicker({ dateFormat: "yyMdd" });
+    
+    $("button#getlogs").click(function() {
+        var query = $("input#datepicker").val();
+        $.get("http://ccradiologs.ellak.gr/playlist-"+query+"txt.zip");
+    });
 });
 
-
-$(function() {
-    $("#datepicker").datepicker({ dateFormat: "dd/mm/yy" });
-});

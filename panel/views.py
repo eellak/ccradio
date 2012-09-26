@@ -9,6 +9,11 @@ from ccradio.views import get_play
 from django.contrib.auth import logout
 from django.db import IntegrityError
 from time import strftime
+from django.conf import settings
+
+ICECAST_URL = settings.ICECAST_URL
+RADIO_URL = settings.RADIO_URL
+LOGS_URL = settings.LOGS_URL
 
 
 def createprofile(user):

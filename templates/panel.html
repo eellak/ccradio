@@ -20,10 +20,14 @@
 {% block logs %}
     <div class="logs">
         <div class="toplabel">radio.logs</div>
-        <form class="wide" id="logs">
-            <input type="text" id="datepicker" name="" placeholder="επιλογή ημερομηνίας"  /><br /><br />
-            <button type="submit" id="getlogs">λήψη</button>
-        </form>
+        {% if logs_success %}
+            {{ logs_success }}
+        {% else %}
+            <form action="/panel/" method="post" class="wide" id="logs">
+                <input type="text" id="datepicker" name="datepicker" placeholder="επιλογή ημερομηνίας" /><br /><br />
+                <button type="submit" id="getlogs">λήψη</button>
+            </form>
+        {% endif %}
     </div>
 {% endblock logs %}
 

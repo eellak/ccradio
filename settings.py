@@ -124,7 +124,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'ccradio.panel',
     'registration',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'south'
 )
 
 

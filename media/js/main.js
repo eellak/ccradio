@@ -19,6 +19,6 @@ $(document).ready(function() {
         $('#about').hide('slow');
     });
 
-    $("#datepicker").datepicker({ dateFormat: "yyMdd" });
+    $("#datepicker").datepicker({ dateFormat: "yyMdd", maxDate: "-1d", minDate: "2012Oct08" });
 });
 

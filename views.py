@@ -18,7 +18,7 @@ def get_play(stream):
         play = settings.RADIO_URL
         return play
     soup = BeautifulSoup(html)
-    
+
     tdtags = soup.findAll('td', { "class" : "streamdata" })
     live = stream[4:5]
     print live
@@ -50,12 +50,12 @@ def base(request):
             authstate = "Τα στοιχεία που εισάγατε δεν είναι σωστά!"
     STREAM_URL = settings.STREAM_URL
     return render_to_response('base.html', locals())
-    
+
 
 def about(request):
     return render_to_response('about.html', locals())
-    
-    
+
+
 def tos(request):
     return render_to_response('tos.html', locals())
 

@@ -68,6 +68,24 @@ def base(request):
         return redirect('/')
 
 
+def edit(request):
+    if request.user.is_authenticated():
+        if request.POST:
+            title = request.POST.get('title')
+            category = request.POST.get('category')
+            b = Broadcaster.objects.get(user=request.user)
+            b.title = title
+            b.category_id = category
+            b.save()
+            return redirect('/panel/')
+        else:
+            broadcaster = Broadcaster.objects.get(user=request.user)
+            categories = get_list_or_404(Category.objects.all())
+            return render_to_response('edit.html', locals())
+    else:
+        return redirect('/')
+
+
 def logout_user(request):
     logout(request)
     return redirect('/')

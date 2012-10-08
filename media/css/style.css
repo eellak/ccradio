@@ -186,7 +186,7 @@ form#login button:hover {
 }
 
 .footer {
-    clear:both; 
+    clear:both;
     background-color: #444;
     padding: 0 0 1em 0;
     color: #fff;
@@ -246,6 +246,60 @@ form.wide button {
 form.wide button:hover {
     background-color: #ccc;
     cursor:pointer;
+}
+
+form.profile label {
+    vertical-align:-40%;
+}
+
+form.profile input[type="text"],
+form.profile input[type="password"] {
+    padding: 6px 10px;
+    background: #ffffff;
+    border: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-style:italic;
+    padding: 5px 10px;
+    margin-bottom:10px;
+    margin: auto;
+}
+
+form.profile input[type="text"]:focus,
+form.profile input[type="password"]:focus {
+    background-color: #ccc;
+}
+
+form.profile button {
+    border:1px solid #ccc;
+	padding: 6px 10px;
+    background: #ffffff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: auto;
+    margin-bottom:10px;
+    margin: auto;
+}
+
+form.profile button:hover {
+    background-color: #ccc;
+    cursor:pointer;
+}
+
+form.profile select {
+    padding: 6px 10px;
+    background: #ffffff;
+    border: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-style:italic;
+    padding: 5px 10px;
+    margin-bottom:10px;
+    margin: auto;
 }
 
 .box {

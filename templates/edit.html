@@ -1,0 +1,26 @@
+{% extends 'panel.html' %}
+
+{% block info %}
+<div class="infouser">
+    <div class="toplabel">edit.me</div>
+    <form action="/panel/edit/" method="post" name="profile" class="profile">
+        <label for=profile>Επωνυμία/Όνομα: </label><br />
+        <input type="text" name="title" value="{{ broadcaster.title }}" required /><br /><br />
+        <label for=profile>Δραστηριότητα: </label><br />
+        <select name="category">
+            {% for category in categories %}
+                <option value="{{ category.id }}" {% ifequal category.id broadcaster.category.id %}selected{% endifequal %}>{{ category.name }}</option>
+            {% endfor %}
+        </select><br /><br />
+        <button type="submit">αποθήκευση</button>
+    </form><br /><br />
+</div>
+{% endblock info %}
+
+
+{% block logs %}
+{% endblock logs %}
+
+
+{% block login %}
+{% endblock login %}

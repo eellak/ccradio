@@ -16,11 +16,12 @@ urlpatterns = patterns('',
     (r'^$', 'ccradio.views.base'),
     (r'^play/', 'ccradio.views.play'),
     (r'^about/', 'ccradio.views.about'),
+    (r'^panel/edit/', 'ccradio.panel.views.edit'),
     (r'^panel/', 'ccradio.panel.views.base'),
     (r'^thanks/', 'ccradio.views.thanks'),
     (r'^tos/', 'ccradio.views.tos'),
     (r'^logout/', 'ccradio.panel.views.logout_user'),
-    
+
     #admin
     (r'^admin/password_reset/$', 'django.contrib.auth.views.password_reset'),
     (r'^admin/password_reset/done/$', 'django.contrib.auth.views.password_reset_done'),

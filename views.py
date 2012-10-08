@@ -49,6 +49,7 @@ def base(request):
         else:
             authstate = "Τα στοιχεία που εισάγατε δεν είναι σωστά!"
     STREAM_URL = settings.STREAM_URL
+    users = Broadcaster.objects.count()
     return render_to_response('base.html', locals())
 
 

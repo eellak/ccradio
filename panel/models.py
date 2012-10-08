@@ -9,11 +9,11 @@ class Category(models.Model):
     slug = models.SlugField(help_text="<b>συμπληρώνεται αυτόματα!</b>")
 
     def __unicode__(self):
-	    return self.name
+        return self.name
 
     class Meta:
-	    ordering = ["name"]
-	    verbose_name_plural = "Categories"
+        ordering = ["name"]
+        verbose_name_plural = "Categories"
 
 
 class Stream(models.Model):
@@ -21,10 +21,10 @@ class Stream(models.Model):
     uri = models.CharField(max_length=100)
 
     def __unicode__(self):
-	    return self.name
+        return self.name
 
     class Meta:
-	    ordering = ["uri"]
+        ordering = ["uri"]
 
 
 class Broadcaster(models.Model):
@@ -33,9 +33,9 @@ class Broadcaster(models.Model):
     category = models.ForeignKey(Category,  default=1, verbose_name="Δραστηριότητα")
     stream = models.ForeignKey(Stream, default=1)
     user = models.ForeignKey(User, unique=True,)
-    
+
     def __unicode__(self):
-	    return self.title
+        return self.title
 
     class Meta:
         ordering = ["title", "category__name"]
@@ -46,9 +46,9 @@ class GenresLog(models.Model):
     broadcaster = models.ForeignKey(Broadcaster)
     stream = models.ForeignKey(Stream)
     ip = models.CharField(max_length=15)
-    
+
     def __unicode__(self):
-	    return self.broadcaster
+        return self.broadcaster
 
     class Meta:
         ordering = ["broadcaster", "date"]

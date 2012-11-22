@@ -19,6 +19,14 @@ $(document).ready(function() {
         $('#about').hide('slow');
     });
 
+    $('a#feedbackopen').click(function() {
+        $('#feedbackbx').toggle('slow');
+    });
+
+    $('a#feedbackexit').click(function() {
+        $('#feedbackbx').hide('slow');
+    });
+
     $("#datepicker").datepicker({ dateFormat: "yyMdd", maxDate: "-1d", minDate: "2012Oct08" });
 });
 

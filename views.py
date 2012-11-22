@@ -61,6 +61,10 @@ def tos(request):
     return render_to_response('tos.html', locals())
 
 
+def feedback(request):
+    return render_to_response('feedback.html', locals())
+
+
 def thanks(request):
     if request.user.is_authenticated():
         return redirect('/panel/')

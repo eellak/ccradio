@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     (r'^panel/', 'ccradio.panel.views.base'),
     (r'^thanks/', 'ccradio.views.thanks'),
     (r'^tos/', 'ccradio.views.tos'),
+    (r'^feedback/', 'ccradio.views.feedback'),
     (r'^logout/', 'ccradio.panel.views.logout_user'),
 
     #admin

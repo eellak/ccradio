@@ -86,8 +86,8 @@ a:hover {
 }
 
 .player-audio {
-	background-color:#eee;
-	border:1px solid #00CCFF;
+    background-color:#eee;
+    border:1px solid #00CCFF;
 }
 
 .playlist {
@@ -305,19 +305,19 @@ form.profile select {
 .box {
     position:absolute;
     width:700px;
-    height:500px;
+    height:auto;
     top:50px;
     left:50%;
     margin-left:-350px;
     z-index:5;
     display:none;
     border:1px dashed gray;
+    background-color:#eee;
 }
 
 .boxtext {
     text-align:left;
     padding:10px;
-    background-color:#eee;
     font-size:1.3em;
 }
 
